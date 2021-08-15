@@ -1,0 +1,24 @@
+micronaut:
+  application:
+    name: nossaCasaDoCodigo
+
+datasources:
+  default:
+    url: ${DATABASE_URL:`jdbc:mysql://localhost:3306/nossa_casa_do_codigo`}
+    username: root
+    password: ${DATABASE_PASSWORD}
+    driverClassName: com.mysql.cj.jdbc.Driver
+    sql-dialect: 'MYSQL'
+
+jpa:
+  default:
+    properties:
+      hibernate:
+        bytecode:
+          provider: none
+        hbm2ddl:
+          auto: update
+        show_sql: true
+
+viacep:
+  url: ${VIACEP_URL:`https://viacep.com.br/ws`}
